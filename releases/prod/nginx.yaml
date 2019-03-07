@@ -1,0 +1,22 @@
+---
+apiVersion: flux.weave.works/v1beta1
+kind: HelmRelease
+metadata:
+  name: nginx-prod
+  namespace: prod
+  annotations:
+    flux.weave.works/automated: "true"
+    flux.weave.works/tag.chart-image: semver:~0.4
+spec:
+  releaseName: nginx-prod
+  chart:
+    git: git@github.com:pmquang/gitops-helm.git
+    path: charts/nginx
+    ref: master
+  values:
+    index: >-
+      <h1>Hello</h1>
+      <p>This is a production</p>
+    
+    image: rai506/nginx:0.4.11
+    replicaCount: 1
