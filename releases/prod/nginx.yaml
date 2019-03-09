@@ -8,7 +8,7 @@ metadata:
     flux.weave.works/automated: "true"
     flux.weave.works/tag.chart-image: semver:~0.4
 spec:
-  releaseName: nginx-prod
+  #releaseName: nginx-prod
   chart:
     git: git@github.com:pmquang/gitops-helm.git
     path: charts/nginx
